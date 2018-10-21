@@ -1854,6 +1854,67 @@ input, select, textarea {
 
 		}
 
+/* Item Hover */
+	.overlay {
+		position: relative;
+	}
+
+	.overlay a {
+		display: block;
+		overflow: hidden;
+		position: relative;
+	  cursor: pointer;
+	}
+
+	.item-hover {
+    	position: absolute;
+    	width: 91%;
+    	height: 88%;
+    	left: 9%;
+    	top: 12%;
+    	bottom: 0;
+    	right: 0;
+    	-webkit-transition: all .2s ease-in-out;
+    		transition: all .2s ease-in-out;
+    	opacity: 0;
+    	background: rgba(255,255,255, 0);
+    	text-align: center;
+	}
+
+	.item-hover-text {
+    	position: relative;
+    	top: 10%;
+    	opacity: 0;
+    	left: 20 px;
+    	-webkit-transition: all .3s ease-in-out;
+    		transition: all .3s ease-in-out;
+	}
+
+	.overlay:hover .item-hover {
+		background: rgba(255,255,255, 0.6);
+		opacity: 1;
+	}
+
+	.overlay:hover .item-hover-text {
+		top: 20%;
+		opacity: 1;
+	}
+
+	.overlay b{
+		color: #2B3C3C;
+		font-size: 15px;
+		letter-spacing: 2px;
+		font-weight: 800;
+		text-transform: uppercase;
+		margin-bottom: 0px;
+	}
+
+	.overlay i{
+		color: #2828B3;
+		font-size: 11px;
+		letter-spacing: 1px;
+	}	
+
 /* Wrapper */
 
 	#wrapper {
