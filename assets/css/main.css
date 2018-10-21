@@ -1857,13 +1857,7 @@ input, select, textarea {
 /* Item Hover */
 	.overlay {
 		position: relative;
-	}
-
-	.overlay a {
-		display: block;
-		overflow: hidden;
-		position: relative;
-	  cursor: pointer;
+		line-height: 1;
 	}
 
 	.item-hover {
@@ -1883,9 +1877,10 @@ input, select, textarea {
 
 	.item-hover-text {
     	position: relative;
-    	top: 10%;
+    	width: 90%;
+    	left: 5%;
+    	top: 5%;
     	opacity: 0;
-    	left: 20 px;
     	-webkit-transition: all .3s ease-in-out;
     		transition: all .3s ease-in-out;
 	}
@@ -1896,7 +1891,7 @@ input, select, textarea {
 	}
 
 	.overlay:hover .item-hover-text {
-		top: 20%;
+		top: 15%;
 		opacity: 1;
 	}
 
