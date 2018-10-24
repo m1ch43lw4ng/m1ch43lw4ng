@@ -1886,7 +1886,7 @@ input, select, textarea {
 	}
 
 	.overlay:hover .item-hover {
-		background: rgba(255,255,255, 0.6);
+		background: rgba(255,255,255, 0.9);
 		opacity: 1;
 	}
 
@@ -1897,7 +1897,7 @@ input, select, textarea {
 
 	.overlay b{
 		color: #2B3C3C;
-		font-size: 15px;
+		font-size: 16px;
 		letter-spacing: 2px;
 		font-weight: 800;
 		text-transform: uppercase;
@@ -1905,9 +1905,16 @@ input, select, textarea {
 	}
 
 	.overlay i{
-		color: #654321;
-		font-size: 11px;
+		color: #00688B;
+		font-size: 12px;
 		letter-spacing: 1px;
+	}
+
+	.overlay l{
+		color: #654321;
+		font-size: 14px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
 	}	
 
 /* Wrapper */
