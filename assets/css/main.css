@@ -1862,10 +1862,10 @@ input, select, textarea {
 
 	.item-hover {
     	position: absolute;
-    	width: 91%;
-    	height: 88%;
+    	width: 92%;
+    	height: 90%;
     	left: 9%;
-    	top: 12%;
+    	top: 10%;
     	bottom: 0;
     	right: 0;
     	-webkit-transition: all .2s ease-in-out;
