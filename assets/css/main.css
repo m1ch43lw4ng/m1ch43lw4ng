@@ -1856,8 +1856,6 @@ input, select, textarea {
 
 	.item-hover {
     	position: absolute;
-    	width: 92%;
-    	height: 90%;
     	bottom: 0;
     	right: 0;
     	-webkit-transition: all .2s ease-in-out;
