@@ -1856,10 +1856,10 @@ input, select, textarea {
 
 	.item-hover {
     	position: absolute;
-    	width: 92%;
-    	height: 90%;
-    	left: 9%;
-    	top: 10%;
+    	width: 95%;
+    	height: 95%;
+    	left: 5%;
+    	top: 5%;
     	bottom: 0;
     	right: 0;
     	-webkit-transition: all .2s ease-in-out;
@@ -1872,7 +1872,7 @@ input, select, textarea {
 	.item-hover-text {
     	position: relative;
     	width: 90%;
-    	left: 5%;
+    	left: 7%;
     	top: 5%;
     	opacity: 0;
     	-webkit-transition: all .3s ease-in-out;
