@@ -1,11 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
 @import url("font-awesome.min.css");
-
-/*
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -1325,8 +1319,8 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
-		font-family: 'Georgia', serif;
-		font-weight: 300;
+		font-family: 'Roboto Slab', serif;
+		font-weight: 400;
 		color: #777777;
 		font-size: 20pt;
 		line-height: 1.75em;
@@ -1371,17 +1365,17 @@ input, select, textarea {
 
 	h1 {
 		font-size: 2.4em;
-		letter-spacing: -0.015em;
+		letter-spacing: .12em;
 	}
 
 	h2 {
-		font-size: 1.8em;
-		letter-spacing: -0.015em;
+		font-size: 1.2em;
+		letter-spacing: 0em;
 	}
 
 	h3, h4, h5, h6 {
-		font-size: 1.25em;
-		letter-spacing: -0.015em;
+		font-size: 1em;
+		letter-spacing: 0em;
 	}
 
 	@media screen and (max-width: 736px) {
@@ -2091,7 +2085,7 @@ input, select, textarea {
 						color: #ffffff;
 						text-align: center;
 						line-height: 2.75em;
-						font-size: 1.5em;
+						font-size: 1em;
 						z-index: 1;
 						-moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
 						-webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
@@ -2136,7 +2130,7 @@ input, select, textarea {
 
 					#main > .panel.intro header p {
 						letter-spacing: -0.015em;
-						font-size: 1.25em;
+						font-size: 1em;
 						margin: 0.25em 0 0 0;
 					}
 
