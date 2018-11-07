@@ -1870,7 +1870,7 @@ input, select, textarea {
 	.item-hover-text {
     	position: relative;
     	width: 75%;
-    	left: 17%;
+    	left: 16.5%;
     	top: 10%;
     	opacity: 0;
     	-webkit-transition: all .3s ease-in-out;
