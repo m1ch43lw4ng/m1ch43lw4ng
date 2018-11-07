@@ -1325,7 +1325,7 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Georgia', serif;
 		font-weight: 300;
 		color: #777777;
 		font-size: 20pt;
@@ -1897,7 +1897,7 @@ input, select, textarea {
 
 	.overlay b{
 		color: #2B3C3C;
-		font-size: 16px;
+		font-size: 14px;
 		letter-spacing: 2px;
 		font-weight: 800;
 		text-transform: uppercase;
@@ -1906,13 +1906,13 @@ input, select, textarea {
 
 	.overlay i{
 		color: #00688B;
-		font-size: 12px;
+		font-size: 10px;
 		letter-spacing: 1px;
 	}
 
 	.overlay l{
 		color: #654321;
-		font-size: 14px;
+		font-size: 12px;
 		letter-spacing: 1px;
 		text-transform: uppercase;
 	}	
