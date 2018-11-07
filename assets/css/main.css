@@ -1461,62 +1461,6 @@ input, select, textarea {
 			border-bottom: solid 2px #f4f4f4;
 		}
 
-/* Form */
-
-	form label {
-		display: block;
-		font-weight: 400;
-		color: #363636;
-		margin: 0 0 1em 0;
-	}
-
-	form input[type="text"],
-	form input[type="email"],
-	form input[type="password"],
-	form select,
-	form textarea {
-		-webkit-appearance: none;
-		border: 0;
-		background: #f4f4f4;
-		padding: 0.75em;
-		width: 100%;
-		-moz-transition: background-color .25s ease-in-out;
-		-webkit-transition: background-color .25s ease-in-out;
-		-ms-transition: background-color .25s ease-in-out;
-		transition: background-color .25s ease-in-out;
-	}
-
-		form input[type="text"]:focus,
-		form input[type="email"]:focus,
-		form input[type="password"]:focus,
-		form select:focus,
-		form textarea:focus {
-			background: #f8f8f8;
-		}
-
-	form input[type="text"],
-	form input[type="email"],
-	form input[type="password"],
-	form select {
-		line-height: 1.35em;
-	}
-
-	form ::-webkit-input-placeholder {
-		color: #999;
-	}
-
-	form :-moz-placeholder {
-		color: #999;
-	}
-
-	form ::-moz-placeholder {
-		color: #999;
-	}
-
-	form :-ms-input-placeholder {
-		color: #999;
-	}
-
 /* Section/Article */
 
 	section, article {
@@ -1533,7 +1477,7 @@ input, select, textarea {
 
 		header > p {
 			margin: 0.5em 0 0 0;
-			color: #aaa;
+			color: #6d97bc;
 		}
 
 		@media screen and (max-width: 736px) {
@@ -1580,106 +1524,7 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
-
-/* Button */
-
-	input[type="button"],
-	input[type="submit"],
-	input[type="reset"],
-	button,
-	.button {
-		-moz-transition: background-color .25s ease-in-out;
-		-webkit-transition: background-color .25s ease-in-out;
-		-ms-transition: background-color .25s ease-in-out;
-		transition: background-color .25s ease-in-out;
-		-webkit-appearance: none;
-		display: inline-block;
-		background-color: #222222;
-		color: #ffffff;
-		border: 0;
-		cursor: pointer;
-		outline: 0;
-		padding: 0.7em 1.5em 0.7em 1.5em;
-	}
-
-		input[type="button"]:hover,
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		button:hover,
-		.button:hover {
-			background-color: #333333;
-		}
-
-		input[type="button"]:active,
-		input[type="submit"]:active,
-		input[type="reset"]:active,
-		button:active,
-		.button:active {
-			background-color: #444444;
-		}
-
-		input[type="button"].alt,
-		input[type="submit"].alt,
-		input[type="reset"].alt,
-		button.alt,
-		.button.alt {
-			background-color: #777777;
-		}
-
-			input[type="button"].alt:hover,
-			input[type="submit"].alt:hover,
-			input[type="reset"].alt:hover,
-			button.alt:hover,
-			.button.alt:hover {
-				background-color: #888888;
-			}
-
-			input[type="button"].alt:active,
-			input[type="submit"].alt:active,
-			input[type="reset"].alt:active,
-			button.alt:active,
-			.button.alt:active {
-				background-color: #999999;
-			}
-
-		input[type="button"].small,
-		input[type="submit"].small,
-		input[type="reset"].small,
-		button.small,
-		.button.small {
-			font-size: 0.75em;
-		}
-
-		input[type="button"].large,
-		input[type="submit"].large,
-		input[type="reset"].large,
-		button.large,
-		.button.large {
-			font-size: 1.25em;
-			padding: 0.5em 1.25em 0.5em 1.25em;
-		}
-
-		input[type="button"].xlarge,
-		input[type="submit"].xlarge,
-		input[type="reset"].xlarge,
-		button.xlarge,
-		.button.xlarge {
-			font-size: 1.5em;
-			padding: 0.5em 1.25em 0.5em 1.25em;
-		}
-
-		@media screen and (max-width: 736px) {
-
-			input[type="button"],
-			input[type="submit"],
-			input[type="reset"],
-			button,
-			.button {
-				width: 100%;
-			}
-
-		}
-
+			
 /* List */
 
 	ul {
