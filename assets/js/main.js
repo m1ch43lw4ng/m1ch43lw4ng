@@ -207,7 +207,7 @@
 	        this.toRotate = toRotate;
 	        this.el = el;
 	        this.loopNum = 0;
-	        this.period = parseInt(period, 10) || 1000;
+	        this.period = parseInt(period, 20) || 500;
 	        this.txt = '';
 	        this.tick();
 	        this.isDeleting = false;
@@ -227,7 +227,7 @@
 	        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
 	        var origin = this;
-	        var delta = 200 - Math.random() * 100;
+	        var delta = 100 - Math.random() * 50;
 
 	        if (this.isDeleting){
 	        	delta /= 2;
@@ -239,7 +239,7 @@
 	        else if (this.isDeleting && this.txt === '') {
 	        	this.isDeleting = false;
 	        	this.loopNum++;
-	        	delta = 500;
+	        	delta = 300;
 	        }
 
 	        setTimeout(function() {
