@@ -1524,7 +1524,7 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
-			
+
 /* List */
 
 	ul {
@@ -2025,7 +2025,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		color: rgba(255, 255, 255, 0.65);
+		color: rgba(255, 255, 255, 0.85);
 		text-align: center;
 		padding: 2em 0 0 0;
 		font-size: 0.75em;
