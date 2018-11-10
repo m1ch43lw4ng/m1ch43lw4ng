@@ -1715,6 +1715,7 @@ input, select, textarea {
 
 			#nav a.active .hover {
 			    display: inline;
+			    font-size: 0.7em;
 			}
 
 		@media screen and (max-width: 980px) {
