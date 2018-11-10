@@ -1599,7 +1599,7 @@ input, select, textarea {
 
 	#nav {
 		text-align: center;
-		height: 4.25em;
+		height: 3.5em;
 		cursor: default;
 	}
 
@@ -1608,8 +1608,8 @@ input, select, textarea {
 			position: relative;
 			display: inline-block;
 			color: #ffffff;
-			width: 1em;
-			height: 1em;
+			width: 0.7em;
+			height: 0.9em;
 			line-height: 0.9em;
 			font-size: 2.5em;
 			margin: 0 0.25em 0 0.25em;
@@ -1626,7 +1626,7 @@ input, select, textarea {
 			}
 
 			#nav a:before {
-				font-size: 1.1em;
+				font-size: 0.7em;
 			}
 
 			#nav a:after {
@@ -1684,13 +1684,21 @@ input, select, textarea {
 					opacity: 1.0;
 				}
 
-			#nav a:hover .start,
-			
+			#nav a .start {
+				font-size: 0.7em;
+			}
+
 			#nav a .hover {
 			    display: none;
 			}
+
 			#nav a:hover .hover {
 			    display: inline;
+			    font-size: 0.7em;
+			}
+
+			#nav a:hover .start {
+			    display: none;
 			}
 
 			#nav a.active {
