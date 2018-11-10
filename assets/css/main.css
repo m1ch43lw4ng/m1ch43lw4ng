@@ -1685,6 +1685,7 @@ input, select, textarea {
 				}
 
 			#nav a:hover .start,
+			
 			#nav a .hover {
 			    display: none;
 			}
@@ -1696,9 +1697,17 @@ input, select, textarea {
 				opacity: 1.0;
 			}
 
-				#nav a.active:after {
-					border-bottom-width: 0.5em;
-				}
+			#nav a.active:after {
+				border-bottom-width: 0.5em;
+			}
+
+			#nav a.active .start {
+			    display: none;
+			}
+
+			#nav a.active .hover {
+			    display: inline;
+			}
 
 		@media screen and (max-width: 980px) {
 
