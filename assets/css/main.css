@@ -1699,6 +1699,7 @@ input, select, textarea {
 
 			#nav a:hover .start {
 			    display: none;
+			    font-size: 0.7em;
 			}
 
 			#nav a.active {
@@ -1711,6 +1712,7 @@ input, select, textarea {
 
 			#nav a.active .start {
 			    display: none;
+			    font-size: 0.7em;
 			}
 
 			#nav a.active .hover {
