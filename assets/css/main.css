@@ -1604,6 +1604,7 @@ input, select, textarea {
 	}
 
 		#nav a {
+			text-decoration: none;
 			position: relative;
 			display: inline-block;
 			color: #ffffff;
@@ -1625,7 +1626,7 @@ input, select, textarea {
 			}
 
 			#nav a:before {
-				font-size: 0.8em;
+				font-size: 1.1em;
 			}
 
 			#nav a:after {
@@ -1683,6 +1684,14 @@ input, select, textarea {
 					opacity: 1.0;
 				}
 
+			#nav a:hover .start,
+			#nav a .hover {
+			    display: none;
+			}
+			#nav a:hover .hover {
+			    display: inline;
+			}
+
 			#nav a.active {
 				opacity: 1.0;
 			}
@@ -1696,6 +1705,8 @@ input, select, textarea {
 			#nav a span {
 				display: none;
 			}
+
+		
 
 		}
 
