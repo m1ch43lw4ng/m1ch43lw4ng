@@ -1971,21 +1971,21 @@ input, select, textarea {
 						transition: width .15s ease-in-out, padding-right .15s ease-in-out;
 					}
 
-						#main > .panel.intro .pic .arrow:before {
-							position: relative;
-							padding-right: 0;
-							top: 0.125em;
-						}
+				#main > .panel.intro .arrow:before {
+					position: relative;
+					padding-right: 0;
+					top: 0.125em;
+				}
 
-						#main > .panel.intro .pic .arrow span {
-							display: block;
-							text-indent: -9999px;
-						}
+				#main > .panel.intro .arrow span {
+					display: block;
+					text-indent: -9999px;
+				}
 
-					#main > .panel.intro .pic:hover .arrow {
-						width: 3em;
-						padding-right: 0.25em;
-					}
+				#main > .panel.intro .arrow:hover {
+					width: 3em;
+					padding-right: 0.25em;
+				}
 
 				#main > .panel.intro header {
 					-moz-flex-grow: 1;
