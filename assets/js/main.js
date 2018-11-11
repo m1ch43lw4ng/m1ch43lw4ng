@@ -263,4 +263,7 @@
 	        document.body.appendChild(css);
 	    };
 
+	    //Image cycling
+	    
+
 })(jQuery);
