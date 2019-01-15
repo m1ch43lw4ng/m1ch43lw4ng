@@ -185,7 +185,7 @@
 					$window.triggerHandler('--refresh');
 				});
 
-			// Fix intro pic.
+			// Intro pic
 				$('.panel.intro').each(function() {
 
 					var $pic = $(this).children('.pic'),
@@ -256,7 +256,7 @@
 	              new TxtType(elements[i], JSON.parse(toRotate), period);
             	}
         	}
-	        // INJECT CSS
+	        // CSS
 	        var css = document.createElement("style");
 	        css.type = "text/css";
 	        css.innerHTML = ".typewriter > .wrap { border-right: 0.08em solid #fff}";
