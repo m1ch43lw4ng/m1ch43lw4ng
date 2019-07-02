@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Buenard:400,700");
+@import url("fonts/avenir");
 @import url("font-awesome.min.css");
 
 html, body, div, span, applet, object,
@@ -1325,7 +1326,7 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
-		font-family: 'Buenard', serif;
+		font-family: 'Avenir', serif
 		font-weight: 400;
 		color: #777777;
 		font-size: 20pt;
@@ -1364,12 +1365,20 @@ input, select, textarea {
 
 		}
 
-	strong, b, h1, h2, h3, h4, h5, h6 {
+	strong, b, h2, h3, h4, h5, h6 {
 		font-weight: 400;
 		color: #363636;
 	}
 
+	p {
+		font-weight: 400;
+		font-family: 'Avenir', serif;
+	}
+
 	h1 {
+		font-family: 'Buenard', sans-serif;
+		font-weight: 400;
+		color: #363636;
 		font-size: 2.4em;
 		letter-spacing: .12em;
 	}
@@ -1611,7 +1620,7 @@ input, select, textarea {
 			width: 0.7em;
 			height: 0.9em;
 			line-height: 0.9em;
-			font-size: 2.5em;
+			font-size: 2.3em;
 			margin: 0 0.25em 0 0.25em;
 			opacity: 0.35;
 			outline: 0;
@@ -1646,6 +1655,7 @@ input, select, textarea {
 			}
 
 			#nav a span {
+				font-family: 'Avenir', serif;
 				display: block;
 				position: absolute;
 				background: #222222;
@@ -1660,8 +1670,8 @@ input, select, textarea {
 				-webkit-transition: opacity .25s ease-in-out;
 				-ms-transition: opacity .25s ease-in-out;
 				transition: opacity .25s ease-in-out;
-				width: 5.5em;
-				margin-left: -2.75em;
+				width: 6em;
+				margin-left: -3em;
 			}
 
 				#nav a span:after {
@@ -2054,6 +2064,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
+		font-family: 'Avenir', serif;
 		color: rgba(255, 255, 255, 0.85);
 		text-align: center;
 		padding: 2em 0 0 0;
