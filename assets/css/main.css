@@ -1326,7 +1326,7 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
-		font-family: 'Avenir', serif
+		font-family: 'Avenir', sans-serif
 		font-weight: 400;
 		color: #777777;
 		font-size: 20pt;
@@ -1372,25 +1372,46 @@ input, select, textarea {
 
 	p {
 		font-weight: 400;
-		font-family: 'Avenir', serif;
+		font-family: 'Avenir', sans-serif;
 	}
 
 	h1 {
-		font-family: 'Buenard', sans-serif;
+		font-family: 'Avenir', sans-serif;
 		font-weight: 400;
 		color: #363636;
 		font-size: 2.4em;
-		letter-spacing: .12em;
+	/*	letter-spacing: .12em;*/
 	}
 
 	h2 {
-		font-size: 1.2em;
-		letter-spacing: 0em;
+		font-family: 'Avenir', sans-serif;
+		font-weight: 400;
+		color: #363636;
+		font-size: 1em;
+		line-height: 1.2em;
 	}
 
-	h3, h4, h5, h6 {
+		h2 a {
+		color: #00688B;
+		text-decoration: none;
+		}
+
+			h2 a:hover {
+				text-decoration: underline;
+			}
+
+	h3 {
+		font-family: 'Avenir', sans-serif;
 		font-size: 1em;
-		letter-spacing: 0em;
+	}
+
+	h4, h5, h6 {
+		font-family: 'Avenir', sans-serif;
+		font-size: 0.8em;
+	}
+
+	b {
+		font-weight: 800;
 	}
 
 	@media screen and (max-width: 736px) {
@@ -1655,7 +1676,7 @@ input, select, textarea {
 			}
 
 			#nav a span {
-				font-family: 'Avenir', serif;
+				font-family: 'Avenir', sans-serif;
 				display: block;
 				position: absolute;
 				background: #222222;
@@ -1672,6 +1693,7 @@ input, select, textarea {
 				transition: opacity .25s ease-in-out;
 				width: 6em;
 				margin-left: -3em;
+				border-radius: 5px;
 			}
 
 				#nav a span:after {
@@ -1768,7 +1790,7 @@ input, select, textarea {
 	}
 
 	.overlay:hover .item-hover {
-		background: rgba(255,255,255, 0.9);
+		background: rgba(255,255,255, 0.95);
 		opacity: 1;
 	}
 
@@ -1777,19 +1799,8 @@ input, select, textarea {
 		opacity: 1;
 	}
 
-	.overlay b{
-		color: #2B3C3C;
-		font-size: 12px;
-		letter-spacing: 2px;
-		font-weight: 800;
-		text-transform: uppercase;
-		margin-bottom: 0px;
-	}
-
-	.overlay i{
+	.overlay h4{
 		color: #00688B;
-		font-size: 10px;
-		letter-spacing: 1px;
 	}
 
 /* Wrapper */
@@ -2066,7 +2077,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		font-family: 'Avenir', serif;
+		font-family: 'Avenir', sans-serif;
 		color: rgba(255, 255, 255, 0.85);
 		text-align: center;
 		padding: 2em 0 0 0;
