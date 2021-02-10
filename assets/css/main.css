@@ -1873,6 +1873,14 @@ input, select, textarea {
 
 		}
 
+	#teaching h1 {
+		font-size: 2em;
+	}
+
+	#teaching h2 {
+		font-size: 0.8em;
+	}
+
 /* Main */
 
 	#main {
