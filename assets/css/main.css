@@ -26,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	overflow: hidden;
 }
 
 ol, ul {
@@ -1631,6 +1632,7 @@ input, select, textarea {
 		text-align: center;
 		height: 3.5em;
 		cursor: default;
+		overflow: auto;
 	}
 
 		#nav a {
