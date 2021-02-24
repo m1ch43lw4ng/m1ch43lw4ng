@@ -1,0 +1,376 @@
+#include "student_code.h"
+#include "mutablePriorityQueue.h"
+
+using namespace std;
+
+namespace CGL
+{
+
+    /**
+     * Evaluates one step of the de Casteljau's algorithm using the given points and
+     * the scalar parameter t (class member).
+     *
+     * @param points A vector of points in 2D
+     * @return A vector containing intermediate points or the final interpolated vector
+     */
+    std::vector<Vector2D> BezierCurve::evaluateStep(std::vector<Vector2D> const &points)
+    {
+        // TODO Part 1.
+
+        std::vector<Vector2D> intermediate = std::vector<Vector2D>();
+
+        for (int i = 0; i < points.size() - 1; i++) {
+            intermediate.push_back(((1 - this->t) * points[i]) + (this->t * points[i + 1]));
+        }
+        return intermediate;
+    }
+
+    /**
+     * Evaluates one step of the de Casteljau's algorithm using the given points and
+     * the scalar parameter t (function parameter).
+     *
+     * @param points    A vector of points in 3D
+     * @param t         Scalar interpolation parameter
+     * @return A vector containing intermediate points or the final interpolated vector
+     */
+    std::vector<Vector3D> BezierPatch::evaluateStep(std::vector<Vector3D> const &points, double t) const
+    {
+        // TODO Part 2.
+        std::vector<Vector3D> intermediate = std::vector<Vector3D>();
+
+        for (int i = 0; i < points.size() - 1; i++) {
+            intermediate.push_back(((1 - t) * points[i]) + (t * points[i + 1]));
+        }
+        return intermediate;
+    }
+
+    /**
+     * Fully evaluates de Casteljau's algorithm for a vector of points at scalar parameter t
+     *
+     * @param points    A vector of points in 3D
+     * @param t         Scalar interpolation parameter
+     * @return Final interpolated vector
+     */
+    Vector3D BezierPatch::evaluate1D(std::vector<Vector3D> const &points, double t) const
+    {
+        // TODO Part 2.
+        std::vector<Vector3D> intermediate = points;
+        while (intermediate.size() > 1) {
+            intermediate = evaluateStep(intermediate, t);
+        }
+        return intermediate[0];
+    }
+
+    /**
+     * Evaluates the Bezier patch at parameter (u, v)
+     *
+     * @param u         Scalar interpolation parameter
+     * @param v         Scalar interpolation parameter (along the other axis)
+     * @return Final interpolated vector
+     */
+    Vector3D BezierPatch::evaluate(double u, double v) const
+    {
+        // TODO Part 2.
+        std::vector<Vector3D> u_points = std::vector<Vector3D>();
+        for (int i = 0; i < 4; i++) {
+            u_points.push_back(evaluate1D(this->controlPoints[i], u));
+        }
+        Vector3D v_point = evaluate1D(u_points, v);
+        return v_point;
+    }
+
+    float Vertex::area(HalfedgeCIter edge) const {
+        float a = edge->edge()->length();
+        float b = edge->next()->edge()->length();
+        float c = edge->next()->next()->edge()->length();
+        float s = (a + b + c) / 2;
+        return sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    Vector3D Vertex::normal( void ) const
+    {
+        // TODO Part 3.
+        // Returns an approximate unit normal at this vertex, computed by
+        // taking the area-weighted average of the normals of neighboring
+        // triangles, then normalizing.
+        HalfedgeCIter start = this->halfedge();
+        HalfedgeCIter curr = start;
+        Vector3D out = Vector3D();
+        do {
+            out += curr->face()->normal() / this->area(curr);
+            curr = curr->twin()->next();
+        } while (curr != start);
+        out.normalize();
+        return out;
+    }
+
+    EdgeIter HalfedgeMesh::flipEdge( EdgeIter e0 ) {
+        // TODO Part 4.
+        // This method should flip the given edge and return an iterator to the flipped edge.
+
+        HalfedgeIter bc = e0->halfedge(); // cb
+        HalfedgeIter cb = bc->twin(); // bc
+        if (bc->face()->isBoundary() || cb->face()->isBoundary()) {
+            return e0;
+        }
+
+        // Inner halfedges
+        HalfedgeIter ca = bc->next();
+        HalfedgeIter ab = ca->next();
+        HalfedgeIter bd = cb->next();
+        HalfedgeIter dc = bd->next();
+
+        // Outer halfedges
+        HalfedgeIter ac = ca->twin();
+        HalfedgeIter cd = dc->twin();
+        HalfedgeIter ba = ab->twin();
+        HalfedgeIter db = bd->twin();
+
+        // Edges
+        EdgeIter mid = bc->edge();
+        EdgeIter nw = ca->edge();
+        EdgeIter ne = dc->edge();
+        EdgeIter sw = ab->edge();
+        EdgeIter se = bd->edge();
+
+        // Keep track of old faces
+        FaceIter face1 = bc->face();
+        FaceIter face2 = cb->face();
+
+        // Vertices
+        VertexIter a = ab->vertex();
+        VertexIter b = bc->vertex();
+        VertexIter c = ca->vertex();
+        VertexIter d = dc->vertex();
+
+        // Reassign
+        bc->twin() = cb;
+        bc->vertex() = a;
+        bc->edge() = mid;
+        bc->face() = face1;
+        bc->next() = dc;
+
+        ca->twin() =  ac;
+        ca->vertex() = c;
+        ca->edge() = nw;
+        ca->face() = face1;
+        ca->next() = bc;
+
+        ab->twin() = ba;
+        ab->vertex() = a;
+        ab->edge() = sw;
+        ab->face() = face2;
+        ab->next() = bd;
+
+        cb->twin() = bc;
+        cb->vertex() = d;
+        cb->edge() = mid;
+        cb->face() = face2;
+        cb->next() = ab;
+
+        bd->twin() = db;
+        bd->vertex() = b;
+        bd->edge() = se;
+        bd->face() = face2;
+        bd->next() = cb;
+
+        dc->twin() = cd;
+        dc->vertex() = d;
+        dc->edge() = ne;
+        dc->face() = face1;
+        dc->next() = ca;
+
+        face1->halfedge() = bc;
+        face2->halfedge() = cb;
+
+        e0->halfedge() = bc;
+        sw->halfedge() = ab;
+        nw->halfedge() = ca;
+        se->halfedge() = bd;
+        ne->halfedge() = dc;
+
+        return e0;
+    }
+
+    VertexIter HalfedgeMesh::splitEdge( EdgeIter e0 )
+    {
+        // TODO Part 5.
+        // This method should split the given edge and return an iterator to the newly inserted vertex.
+        // The halfedge of this vertex should point along the edge that was split, rather than the new edges.
+        HalfedgeIter bc = e0->halfedge(); // cb
+        HalfedgeIter cb = bc->twin(); // bc
+        if (bc->face()->isBoundary() || cb->face()->isBoundary()) {
+            return bc->vertex();
+        }
+
+        // Inner halfedges
+        HalfedgeIter ca = bc->next();
+        HalfedgeIter ab = ca->next();
+        HalfedgeIter bd = cb->next();
+        HalfedgeIter dc = bd->next();
+
+        // Outer halfedges
+        HalfedgeIter ac = ca->twin();
+        HalfedgeIter cd = dc->twin();
+        HalfedgeIter ba = ab->twin();
+        HalfedgeIter db = bd->twin();
+
+        // Edges
+        EdgeIter mid = bc->edge();
+        EdgeIter nw = ca->edge();
+        EdgeIter ne = dc->edge();
+        EdgeIter sw = ab->edge();
+        EdgeIter se = bd->edge();
+
+        // Keep track of old faces
+        FaceIter face1 = bc->face();
+        FaceIter face2 = cb->face();
+
+        // Vertices
+        VertexIter a = ab->vertex();
+        VertexIter b = bc->vertex();
+        VertexIter c = ca->vertex();
+        VertexIter d = dc->vertex();
+
+        // New Halfedges
+        HalfedgeIter am = HalfedgeIter();
+        HalfedgeIter ma = HalfedgeIter();
+        HalfedgeIter bm = HalfedgeIter();
+        HalfedgeIter mb = HalfedgeIter();
+        HalfedgeIter cm = HalfedgeIter();
+        HalfedgeIter mc = HalfedgeIter();
+        HalfedgeIter dm = HalfedgeIter();
+        HalfedgeIter md = HalfedgeIter();
+
+        // New edges
+        EdgeIter n = EdgeIter();
+        EdgeIter s = EdgeIter();
+        EdgeIter e = EdgeIter();
+        EdgeIter w = EdgeIter();
+
+        // New faces
+        FaceIter face3 = FaceIter();
+        FaceIter face4 = FaceIter();
+
+        // New VertexIter
+        VertexIter m = VertexIter();
+        m->position = (b->position + c->position) / 2;
+        m->halfedge() = ma;
+
+        // Assign Faces
+        face1->halfedge() = ca;
+        face2->halfedge() = dc;
+        face3->halfedge() = ab;
+        face4->halfedge() = bd;
+
+        // Assign Halfedges
+        am->twin() = ma;
+        am->vertex() = a;
+        am->edge() = w;
+        am->face() = face1;
+        am->next() = mc;
+
+        ma->twin() = am;
+        ma->vertex() = m;
+        ma->edge() = w;
+        ma->face() = face3;
+        ma->next() = ab;
+
+        bm->twin() = mb;
+        bm->vertex() = b;
+        bm->edge() = s;
+        bm->face() = face3;
+        bm->next() = ma;
+
+        mb->twin() = am;
+        mb->vertex() = m;
+        mb->edge() = s;
+        mb->face() = face4;
+        mb->next() = bd;
+
+        cm->twin() = mc;
+        cm->vertex() = c;
+        cm->edge() = n;
+        cm->face() = face1;
+        cm->next() = md;
+
+        mc->twin() = cm;
+        mc->vertex() = m;
+        mc->edge() = n;
+        mc->face() = face2;
+        mc->next() = ca;
+
+        dm->twin() = md;
+        dm->vertex() = d;
+        dm->edge() = e;
+        dm->face() = face4;
+        dm->next() = mb;
+
+        md->twin() = dc;
+        md->vertex() = m;
+        md->edge() = e;
+        md->face() = face2;
+        md->next() = dc;
+
+        ca->twin() =  ac;
+        ca->vertex() = c;
+        ca->edge() = nw;
+        ca->face() = face1;
+        ca->next() = am;
+
+        ab->twin() = ba;
+        ab->vertex() = a;
+        ab->edge() = sw;
+        ab->face() = face3;
+        ab->next() = bm;
+
+        bd->twin() = db;
+        bd->vertex() = b;
+        bd->edge() = se;
+        bd->face() = face4;
+        bd->next() = dm;
+
+        dc->twin() = cd;
+        dc->vertex() = d;
+        dc->edge() = ne;
+        dc->face() = face2;
+        dc->next() = cm;
+
+        // Assign Edges
+        n->halfedge() = mc;
+        s->halfedge() = mb;
+        e->halfedge() = md;
+        w->halfedge() = ma;
+        sw->halfedge() = ab;
+        nw->halfedge() = ca;
+        se->halfedge() = bd;
+        ne->halfedge() = dc;
+
+        return m;
+    }
+
+
+
+    void MeshResampler::upsample( HalfedgeMesh& mesh )
+    {
+        // TODO Part 6.
+        // This routine should increase the number of triangles in the mesh using Loop subdivision.
+        // One possible solution is to break up the method as listed below.
+
+        // 1. Compute new positions for all the vertices in the input mesh, using the Loop subdivision rule,
+        // and store them in Vertex::newPosition. At this point, we also want to mark each vertex as being
+        // a vertex of the original mesh.
+
+        // 2. Compute the updated vertex positions associated with edges, and store it in Edge::newPosition.
+
+        // 3. Split every edge in the mesh, in any order. For future reference, we're also going to store some
+        // information about which subdivide edges come from splitting an edge in the original mesh, and which edges
+        // are new, by setting the flat Edge::isNew. Note that in this loop, we only want to iterate over edges of
+        // the original mesh---otherwise, we'll end up splitting edges that we just split (and the loop will never end!)
+
+        // 4. Flip any new edge that connects an old and new vertex.
+
+        // 5. Copy the new vertex positions into final Vertex::position.
+
+    }
+}
