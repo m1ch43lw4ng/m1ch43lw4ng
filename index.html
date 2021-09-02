@@ -106,10 +106,30 @@
 						<!-- Teaching -->
 						<article id="teaching" class="panel">
 							<section>
-								<h1>CS 70 Spring 2021
-								</h1>
+								<div id="title-fall21"><h1>CS 70 Fall 2021</h1></div>
+								<div id="title-spring21" style="display: none"><h1>CS 70 Spring 2021</h1></div>
+								<div>
+								<br>
+								<button id="button-fall21" onclick="fall21()" class="active-button">Fall 2021</button>
+								<button id="button-spring21" onclick="spring21()" class="inactive-button" style="margin-left: -2px">Spring 2021</button>
+								</div>
+								<div id="content-fall21">
 								<h2>
 								<br>
+								Discussion: W/F 1-2 PM<br>
+								Office Hours: Tue 2-4PM<br>
+								<a href = "mailto:m1ch43lw4ng@berkeley.edu">m1ch43lw4ng@berkeley.edu</a><br>
+<!-- 								<a href = "https://tinyurl.com/michael-eecs70">https://tinyurl.com/michael-eecs70</a> -->
+								<br>
+								<br>
+								</h2>
+								<h2>
+								Dis 1A: <a href = "https://docs.google.com/presentation/d/1fNLJCUOKpirmFvLf_5e-mxKvAbrUHksglS8Dk1WhO4w/edit?usp=sharing" target="_blank">Slides</a>, <a href = "https://drive.google.com/file/d/1cVAFU-xj5ky4M83Z8RD094m-oHKiWHKp/view?usp=sharing" target="_blank">Notes</a><br>
+								</h2>
+								</div>
+
+								<div id="content-spring21" style="display: none">
+								<h2>
 								<br>
 								Discussion: Tu/Th 7-8PM<br>
 								Office Hour: Th 3-4PM<br>
@@ -147,6 +167,40 @@
 								Dis 13A: <a href = "https://docs.google.com/presentation/d/1f3JoGDfpS5480FNbmpGAUdQY66Mg9HJYroJ5P-3OLFY/edit?usp=sharing" target="_blank">Slides</a>, <a href = "https://drive.google.com/file/d/1Ya9yeQEDEv0LHolm-dCH4oNYMJJ0caPN/view?usp=sharing" target="_blank">Notes</a><br>
 								Dis 13B: <a href = "https://docs.google.com/presentation/d/1a0rpTekDWFotDzuuFLIj37jqFUm7rJojMhfVriq4--A/edit?usp=sharing" target="_blank">Slides</a>, <a href = "https://drive.google.com/file/d/1Pqt0WT2m_zyuINdBDLwhW53fne_4XPWa/view?usp=sharing" target="_blank">Notes</a><br>
 								</h2>
+								</div>
+
+							<script>
+							function fall21() {
+							  var x = document.getElementById("button-fall21");
+						      x.className = "active-button";
+						      var x = document.getElementById("button-spring21");
+  						      x.className = "inactive-button";
+							  var x = document.getElementById("title-fall21");
+						      x.style.display = "block";
+						      var x = document.getElementById("title-spring21");
+						      x.style.display = "none";
+							  var x = document.getElementById("content-fall21");
+						      x.style.display = "block";
+						      var x = document.getElementById("content-spring21");
+						      x.style.display = "none";
+							}
+
+							function spring21() {
+							  var x = document.getElementById("button-fall21");
+						      x.className = "inactive-button";
+						      var x = document.getElementById("button-spring21");
+  						      x.className = "active-button";
+							  var x = document.getElementById("title-fall21");
+						      x.style.display = "none";
+						      var x = document.getElementById("title-spring21");
+						      x.style.display = "block";
+							  var x = document.getElementById("content-fall21");
+						      x.style.display = "none";
+						      var x = document.getElementById("content-spring21");
+						      x.style.display = "block";
+							}
+							</script>
+								
 							</section>
 						</article>
 					</div>

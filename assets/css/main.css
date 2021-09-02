@@ -1468,6 +1468,38 @@ input, select, textarea {
 		margin-bottom: 2em;
 	}
 
+/* Button */
+
+	.inactive-button {
+	  background-color: #FFFFFF;
+	  border: none;
+	  color: #363636;
+	  padding: 0.5em 1em;
+	  text-align: center;
+	  text-decoration: none;
+	  font-size: 12px;
+	  border-radius: 4px;
+	}
+
+		.inactive-button:hover {
+			background-color: #F4F4F4;
+		}
+
+	.active-button {
+	  background-color: #3685a1;
+	  border: none;
+	  color: white;
+	  padding: 0.5em 1em;
+	  text-align: center;
+	  text-decoration: none;
+	  font-size: 12px;
+	  border-radius: 4px;
+	}
+
+		.active-button:hover {
+			background-color: #00688B;
+		}
+
 /* Table */
 
 	table {
