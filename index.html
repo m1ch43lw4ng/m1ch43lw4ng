@@ -106,14 +106,32 @@
 						<!-- Teaching -->
 						<article id="teaching" class="panel">
 							<section>
-								<div id="title-fall21"><h1>CS 70 Fall 2021</h1></div>
+								<div id="title-spring22"><h1>CS 70 Spring 2022</h1></div>
+								<div id="title-fall21" style="display: none"><h1>CS 70 Fall 2021</h1></div>
 								<div id="title-spring21" style="display: none"><h1>CS 70 Spring 2021</h1></div>
 								<div>
 								<br>
-								<button id="button-fall21" onclick="fall21()" class="active-button">Fall 2021</button>
+								<button id="button-spring22" onclick="spring22()" class="active-button">Spring 2022</button>
+								<button id="button-fall21" onclick="fall21()" class="inactive-button" style="margin-left: -2px">Fall 2021</button>
 								<button id="button-spring21" onclick="spring21()" class="inactive-button" style="margin-left: -2px">Spring 2021</button>
 								</div>
-								<div id="content-fall21">
+
+								<div id="content-spring22">
+								<h2>
+								<br>
+								Discussion: Tu/Th 5-6 PM, 105 Dwinelle<br>
+								Office Hours: Wed 11-1PM, 400 Cory<br>
+								<a href = "mailto:m1ch43lw4ng@berkeley.edu">m1ch43lw4ng@berkeley.edu</a><br>
+								<a href = "https://forms.gle/2Fi7ipWTD83ArxBA8">Attendance form</a>
+								<br>
+								<br>
+								</h2>
+								<h2>
+								Dis 0A: <a href = "https://docs.google.com/presentation/d/1Ff_R0ASaVP-SaK4UgqbRcTTE_2SAuW13ClStoaOQwn0/edit?usp=sharing" target="_blank">Slides</a>, <a href = "https://drive.google.com/file/d/1m_JrOdehItSiubg8rpYnrfdsfYwrq9Z4/view?usp=sharing" target="_blank">Notes</a><br>
+								</h2>
+								</div>
+
+								<div style="display: none" id="content-fall21">
 								<h2>
 								<br>
 								Discussion: W/F 1-2 PM, 70 Evans<br>
@@ -192,17 +210,44 @@
 								</div>
 
 							<script>
+							function spring22() {
+							  var x = document.getElementById("button-spring22");
+						      x.className = "active-button";
+						      var x = document.getElementById("button-fall21");
+  						      x.className = "inactive-button";
+						      var x = document.getElementById("button-spring21");
+  						      x.className = "inactive-button";
+							  var x = document.getElementById("title-spring22");
+						      x.style.display = "block";
+						      var x = document.getElementById("title-fall21");
+						      x.style.display = "none";
+						      var x = document.getElementById("title-spring21");
+						      x.style.display = "none";
+							  var x = document.getElementById("content-spring22");
+						      x.style.display = "block";
+						      var x = document.getElementById("content-fall21");
+						      x.style.display = "none";
+						      var x = document.getElementById("content-spring21");
+						      x.style.display = "none";
+							}
+
 							function fall21() {
 							  var x = document.getElementById("button-fall21");
 						      x.className = "active-button";
+						      var x = document.getElementById("button-spring22");
+  						      x.className = "inactive-button";
 						      var x = document.getElementById("button-spring21");
   						      x.className = "inactive-button";
 							  var x = document.getElementById("title-fall21");
 						      x.style.display = "block";
+						      var x = document.getElementById("title-spring22");
+						      x.style.display = "none";
 						      var x = document.getElementById("title-spring21");
 						      x.style.display = "none";
 							  var x = document.getElementById("content-fall21");
 						      x.style.display = "block";
+						      var x = document.getElementById("content-spring22");
+						      x.style.display = "none";
 						      var x = document.getElementById("content-spring21");
 						      x.style.display = "none";
 							}
@@ -210,13 +255,19 @@
 							function spring21() {
 							  var x = document.getElementById("button-fall21");
 						      x.className = "inactive-button";
+						      var x = document.getElementById("button-spring22");
+  						      x.className = "inactive-button";
 						      var x = document.getElementById("button-spring21");
   						      x.className = "active-button";
 							  var x = document.getElementById("title-fall21");
 						      x.style.display = "none";
+						      var x = document.getElementById("title-spring22");
+						      x.style.display = "none";
 						      var x = document.getElementById("title-spring21");
 						      x.style.display = "block";
 							  var x = document.getElementById("content-fall21");
+						      x.style.display = "none";
+						      var x = document.getElementById("content-spring22");
 						      x.style.display = "none";
 						      var x = document.getElementById("content-spring21");
 						      x.style.display = "block";
